@@ -362,5 +362,25 @@ console.log(doubled); // Output: [2, 4, 6, 8]
 const sum = numbers.reduce((acc, num) => acc + num, 0);
 console.log(sum); // Output: 10
 ```
+# Q14 Parameters Accepted by `map()` Function
+The `map()` function accepts a **callback function** with three parameters:
 
+```javascript
+array.map((currentElement, index, array) => { 
+  // function body
+});
+```
+- `currentElement`: The current element being processed.
+- `index`: The index of the current element.
+- `array`: The array `map()` was called upon.
+
+### Example:
+```javascript
+const numbers = [1, 2, 3, 4];
+const result = numbers.map((num, idx, arr) => {
+  console.log(`Processing ${num} at index ${idx} in`, arr);
+  return num * 2;
+});
+console.log(result); // Output: [2, 4, 6, 8]
+```
 
