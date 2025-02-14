@@ -343,3 +343,24 @@ console.log(wordCount);
 - Transforming data (e.g., flattening arrays, counting occurrences).
 - Implementing custom aggregation logic.
 
+# Q13 `map()` vs `reduce()` in JavaScript
+
+| Function | Purpose |
+|----------|---------|
+| `map()` | Used to create a new array by applying a function to each element. |
+| `reduce()` | Used to accumulate a single result from an array (e.g., summing numbers). |
+
+### Example of `map()`:
+```javascript
+const numbers = [1, 2, 3, 4];
+const doubled = numbers.map(num => num * 2);
+console.log(doubled); // Output: [2, 4, 6, 8]
+```
+
+### Example of `reduce()`:
+```javascript
+const sum = numbers.reduce((acc, num) => acc + num, 0);
+console.log(sum); // Output: 10
+```
+
+
