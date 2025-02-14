@@ -188,4 +188,10 @@ console.log(restNumbers);   // Output: [3, 4, 5]
 
 The **`array.reverse()`** method reverses the order of elements in an array and **modifies the original array**.
 
+# Q9 Explain the Difference Between `==` and `===` in JavaScript
+
+- **`==` (Loose Equality)**: Compares two values for equality **after converting them** to a common type (type coercion).
+- **`===` (Strict Equality)**: Compares both **value and type**, without performing type coercion.
+
+
 
