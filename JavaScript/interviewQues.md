@@ -124,3 +124,10 @@ Promise callback
 setTimeout callback
 ```
 
+
+# Q5 Difference between `setTimeout()` and `setInterval()`?
+
+- `setTimeout()` is used to execute a function **once** after a specified delay.
+- `setInterval()` is used to execute a function **repeatedly** at a fixed time interval.
+
+
