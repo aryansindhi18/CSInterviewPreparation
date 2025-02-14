@@ -184,4 +184,8 @@ console.log(second); // Output: 2
 console.log(restNumbers);   // Output: [3, 4, 5]
 ```
 
+# Q8 Have You Heard of `array.reverse()`?
+
+The **`array.reverse()`** method reverses the order of elements in an array and **modifies the original array**.
+
 
