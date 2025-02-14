@@ -40,3 +40,27 @@ export default MyComponent;
 ```
 
 In both cases, the component will only re-render if the `message` prop changes, optimizing performance by avoiding unnecessary renders.
+
+
+# Q6 What are Higher Order Components (HOCs)?
+HOCs are functions that take a component and return a new component with additional props or behavior.
+
+#### Example of a Higher Order Component:
+```javascript
+import React from "react";
+
+const withLogging = (WrappedComponent) => {
+  return (props) => {
+    console.log("Component Mounted:", WrappedComponent.name);
+    return <WrappedComponent {...props} />;
+  };
+};
+
+const HelloWorld = ({ message }) => <h1>{message}</h1>;
+const EnhancedHelloWorld = withLogging(HelloWorld);
+
+export default EnhancedHelloWorld;
+```
+
+In this example, `withLogging` is a HOC that logs when the component is mounted. It takes `HelloWorld` as an argument and returns an enhanced version of it using a functional component approach.
+
