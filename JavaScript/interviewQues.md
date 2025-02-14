@@ -30,5 +30,8 @@ sayHello(); // TypeError: sayHello is not a function
 var sayHello = function() {
     console.log("Hi!");
 };
+```
 
-# Q2 Difference between **let** and **var**?
+# Q2 Difference between let and var?
+- **var** is function-scoped or globally scoped if declared outside of a function. **let** is block-scoped, meaning it is confined to the block (enclosed by **{}**) it is declared in.
+- Variables declared with **var** are hoisted and initialized with **undefined**. **let** variables are hoisted but are not initialized.
