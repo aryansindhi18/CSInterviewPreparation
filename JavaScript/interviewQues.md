@@ -193,5 +193,63 @@ The **`array.reverse()`** method reverses the order of elements in an array and 
 - **`==` (Loose Equality)**: Compares two values for equality **after converting them** to a common type (type coercion).
 - **`===` (Strict Equality)**: Compares both **value and type**, without performing type coercion.
 
+# Q10 Shallow Copy vs. Deep Copy in JavaScript
+
+### Shallow Copy
+A **shallow copy** creates a new object, but it does not clone nested objects; instead, it copies references to them. This means changes to nested objects in the copied object will also affect the original object.
+
+#### Example:
+```javascript
+const original = {
+  name: "John",
+  address: {
+    city: "New York",
+    zip: 10001
+  }
+};
+
+const shallowCopy = { ...original }; // Shallow copy using spread operator
+shallowCopy.address.city = "Los Angeles";
+
+console.log(original.address.city); // Output: "Los Angeles" (modified in original object)
+```
+
+### Deep Copy
+A **deep copy** creates a completely independent copy of the object, including all nested objects. Changes in the copied object do not affect the original object.
+
+#### Example:
+```javascript
+const original = {
+  name: "John",
+  address: {
+    city: "New York",
+    zip: 10001
+  }
+};
+
+// Deep copy using JSON methods (works only for JSON-compatible structures)
+const deepCopy = JSON.parse(JSON.stringify(original));
+deepCopy.address.city = "Los Angeles";
+
+console.log(original.address.city); // Output: "New York" (original object remains unchanged)
+```
+
+### Alternative Methods for Deep Copy:
+#### Using `structuredClone()` (Modern Approach)
+```javascript
+const deepCopy = structuredClone(original);
+```
+
+#### Using Lodash
+```javascript
+const _ = require("lodash");
+const deepCopy = _.cloneDeep(original);
+```
+
+### Summary Table:
+| Type         | Copies Nested Objects? | Independent Copy? |
+|-------------|---------------------|-----------------|
+| Shallow Copy | ❌ (references copied) | ❌ (modifications affect original) |
+| Deep Copy    | ✅ (nested objects cloned) | ✅ (fully independent copy) |
 
 
