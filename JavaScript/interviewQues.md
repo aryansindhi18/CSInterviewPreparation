@@ -30,3 +30,5 @@ sayHello(); // TypeError: sayHello is not a function
 var sayHello = function() {
     console.log("Hi!");
 };
+
+# Q2 Difference between **let** and **var**?
