@@ -131,3 +131,17 @@ setTimeout callback
 - `setInterval()` is used to execute a function **repeatedly** at a fixed time interval.
 
 
+# Q6 ES6 Features I Have Used
+
+- **Arrow Functions (`=>`)**: Concise syntax for writing functions.
+- **Template Literals**: String interpolation using backticks (`` ` ` `).
+- **Destructuring**: Extract values from arrays or objects easily.
+- **Classes**: Object-oriented programming with `class` and `constructor`.
+- **Promises**: Handle asynchronous operations using `.then()` and `.catch()`.
+- **Spread/Rest Operators (`...`)**: Expand or collect elements in arrays and objects.
+- **`let` and `const`**: Block-scoped variable declarations.
+- **`async/await`**: Simplify asynchronous code with a synchronous-like structure.
+- **Default Parameters**: Assign default values to function parameters.
+- **Modules (`import`/`export`)**: Modular code structure for better maintainability.
+
+
