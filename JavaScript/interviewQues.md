@@ -75,3 +75,52 @@ The **Event Loop** is a mechanism that allows JavaScript to perform **non-blocki
    - **Executes microtasks first** (Promises).
    - **Then executes tasks from the Task Queue**.
 5. The cycle repeats indefinitely.
+   
+
+
+# Q4 Event Loop Precedence: Promise vs setTimeout
+
+## **Which Executes First: Promise or setTimeout?**
+In JavaScript’s **Event Loop**, **microtasks** (like `Promise.then()`) have **higher precedence** than **macrotasks** (like `setTimeout()`).
+
+### **Execution Order**
+1. **Microtasks (Higher Priority)**
+   - **Promise callbacks** (`.then()`, `.catch()`, `.finally()`)
+   - `queueMicrotask()`
+   - `MutationObserver`
+   - `process.nextTick()` (Node.js)
+
+2. **Macrotasks (Lower Priority)**
+   - `setTimeout()`
+   - `setInterval()`
+   - `setImmediate()` (Node.js)
+   - I/O operations (e.g., file reading, network requests)
+   - UI rendering tasks
+
+### **How It Works**
+- The **Event Loop** first executes **all microtasks** before moving to **macrotasks**.
+- This ensures **Promise callbacks execute before** `setTimeout()`.
+
+---
+
+## **Example: Microtasks vs Macrotasks**
+```js
+console.log("Start");
+
+setTimeout(() => {
+    console.log("setTimeout callback");
+}, 0);
+
+Promise.resolve().then(() => {
+    console.log("Promise callback");
+});
+
+console.log("End");
+
+Output:
+Start
+End
+Promise callback
+setTimeout callback
+```
+
