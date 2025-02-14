@@ -1,20 +1,14 @@
-# Hoisting in JavaScript
+# Q1 Hoisting in JavaScript
 
 Hoisting is a JavaScript mechanism where variables and functions are moved to the top of their containing scope during the compile phase before code execution.
 
 ## How Hoisting Works
 
 - **`var` Declarations**: Hoisted and initialized with `undefined`.
-- **`let` and `const` Declarations**: Hoisted but remain uninitialized (temporarily in a "Temporal Dead Zone" or TDZ).
+- **`let` and `const` Declarations**: Hoisted but remain uninitialized (temporarily in **Temporal Dead Zone (TDZ)**), causing a `ReferenceError` when accessed before declaration.
 - **Function Declarations**: Hoisted with their definition, allowing them to be called before their declaration.
 - **Function Expressions**: Hoisted without their definition, following variable hoisting rules.
 
-## Key Takeaways
-
-- `var` is hoisted but initialized as `undefined`.
-- `let` and `const` are hoisted but remain in the **Temporal Dead Zone (TDZ)**, causing a `ReferenceError` when accessed before declaration.
-- Function declarations are fully hoisted, meaning they can be called before their definition.
-- Function expressions (assigned to `var`, `let`, or `const`) follow variable hoisting rules and are not hoisted as functions.
 
 ```js
 // Example 1: var hoisting
