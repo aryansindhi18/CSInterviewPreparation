@@ -145,7 +145,7 @@ setTimeout callback
 - **Modules (`import`/`export`)**: Modular code structure for better maintainability.
 
 # Q7 Where Do You Mostly Use the Rest Operator?
-The rest operator (**...**) is commonly used to collect multiple elements into an array. It is used in function arguments to collect a variable number of arguments into an array, or to copy the remaining properties of an object.
+The rest operator (** ... **) is commonly used to collect multiple elements into an array. It is used in function arguments to collect a variable number of arguments into an array, or to copy the remaining properties of an object.
 
 - **Function Arguments**: To collect a variable number of arguments into an array.
 - **Object Destructuring**: To copy the remaining properties of an object.
