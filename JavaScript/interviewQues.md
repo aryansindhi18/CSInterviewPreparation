@@ -63,4 +63,15 @@ The **Event Loop** is a mechanism that allows JavaScript to perform **non-blocki
    - The event loop continuously **checks** if the **call stack is empty**:
      - If **yes**, it executes **microtasks first**.
      - Then, it moves to the **Task Queue**.
+## Event Loop Flow
 
+1. **Execute synchronous code** (functions, loops, etc.).
+2. **Encounter an asynchronous operation** (e.g., `setTimeout`, `fetch`).
+   - It is sent to **Web APIs** for processing.
+   - The main thread continues executing other code.
+3. Once the asynchronous operation completes:
+   - The callback is placed in the **Task Queue** or **Microtask Queue**.
+4. The **Event Loop**:
+   - **Executes microtasks first** (Promises).
+   - **Then executes tasks from the Task Queue**.
+5. The cycle repeats indefinitely.
