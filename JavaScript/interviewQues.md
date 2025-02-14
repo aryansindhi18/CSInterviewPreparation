@@ -252,4 +252,49 @@ const deepCopy = _.cloneDeep(original);
 | Shallow Copy | ❌ (references copied) | ❌ (modifications affect original) |
 | Deep Copy    | ✅ (nested objects cloned) | ✅ (fully independent copy) |
 
+# Q11 Closures in JavaScript
+A **closure** is a function that retains access to variables from its lexical scope, even after the function in which it was declared has finished executing.
 
+### Example:
+```javascript
+function outerFunction(outerVariable) {
+  return function innerFunction(innerVariable) {
+    console.log(`Outer: ${outerVariable}, Inner: ${innerVariable}`);
+  };
+}
+
+const closureFunction = outerFunction("Hello");
+closureFunction("World"); // Output: Outer: Hello, Inner: World
+```
+
+### Why Use Closures?
+- **Encapsulation**: Closures help in creating private variables.
+- **State Persistence**: Retains state even after outer function execution.
+- **Callbacks & Event Handling**: Frequently used in asynchronous operations.
+
+### Common Use Cases:
+1. **Data Hiding and Encapsulation**
+```javascript
+function counter() {
+  let count = 0;
+  return function () {
+    return ++count;
+  };
+}
+
+const increment = counter();
+console.log(increment()); // Output: 1
+console.log(increment()); // Output: 2
+```
+
+2. **Creating Function Factories**
+```javascript
+function multiplier(factor) {
+  return function (number) {
+    return number * factor;
+  };
+}
+
+const double = multiplier(2);
+console.log(double(5)); // Output: 10
+```
