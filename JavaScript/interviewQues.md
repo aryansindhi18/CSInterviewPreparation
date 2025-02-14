@@ -384,3 +384,48 @@ const result = numbers.map((num, idx, arr) => {
 console.log(result); // Output: [2, 4, 6, 8]
 ```
 
+# Q15 Promises vs Callbacks in JavaScript
+### Callbacks
+Callbacks are functions passed as arguments to other functions and executed once the task is completed. Callbacks can lead to **callback hell** if nested too deeply.
+
+#### Example:
+```javascript
+function fetchData(callback) {
+  setTimeout(() => {
+    callback("Data received");
+  }, 1000);
+}
+
+fetchData((message) => {
+  console.log(message); // Output: Data received
+});
+```
+
+### Promises
+Promises provide a cleaner way to handle asynchronous operations and can be chained for better readability and error handling.
+
+#### Example:
+```javascript
+function fetchData() {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve("Data received");
+    }, 1000);
+  });
+}
+
+fetchData().then((message) => {
+  console.log(message); // Output: Data received
+});
+```
+
+### Differences Between Callbacks and Promises
+| Feature     | Callbacks | Promises |
+|------------|----------|---------|
+| Readability | Can lead to callback hell | More readable with `.then()` chaining |
+| Error Handling | Must handle errors manually | Uses `.catch()` for error handling |
+| Flexibility | Limited reusability | Can be chained and reused efficiently |
+
+Promises make asynchronous code more structured and maintainable, reducing issues related to deeply nested callbacks.
+
+
