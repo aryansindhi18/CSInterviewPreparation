@@ -144,4 +144,44 @@ setTimeout callback
 - **Default Parameters**: Assign default values to function parameters.
 - **Modules (`import`/`export`)**: Modular code structure for better maintainability.
 
+# Q7 Where Do You Mostly Use the Rest Operator?
+The rest operator (**...**) is commonly used to collect multiple elements into an array. It is used in function arguments to collect a variable number of arguments into an array, or to copy the remaining properties of an object.
+
+- **Function Arguments**: To collect a variable number of arguments into an array.
+- **Object Destructuring**: To copy the remaining properties of an object.
+- **Array Destructuring**: To collect remaining elements of an array.
+
+## Examples:
+
+```javascript
+// 1. Using Rest Operator in Function Arguments
+// The rest operator allows functions to accept an indefinite number of arguments as an array.
+
+function sum(...numbers) {
+    return numbers.reduce((acc, num) => acc + num, 0);
+}
+
+console.log(sum(1, 2, 3, 4)); // Output: 10
+
+// 2. Using Rest Operator in Object Destructuring
+// The rest operator helps extract specific properties while keeping the remaining properties in a separate object.
+
+const person = { name: "John", age: 30, city: "New York", country: "USA" };
+const { name, age, ...rest } = person;
+
+console.log(name); // Output: John
+console.log(age);  // Output: 30
+console.log(rest); // Output: { city: "New York", country: "USA" }
+
+// 3. Using Rest Operator in Array Destructuring
+// The rest operator can be used to collect the remaining elements of an array.
+
+const numbers = [1, 2, 3, 4, 5];
+const [first, second, ...restNumbers] = numbers;
+
+console.log(first);  // Output: 1
+console.log(second); // Output: 2
+console.log(restNumbers);   // Output: [3, 4, 5]
+```
+
 
