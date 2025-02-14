@@ -298,3 +298,48 @@ function multiplier(factor) {
 const double = multiplier(2);
 console.log(double(5)); // Output: 10
 ```
+
+# Q12 The `reduce()` Function in JavaScript
+The `reduce()` method is used to **reduce an array to a single value** by applying a callback function that iterates through the array.
+
+### Syntax:
+```javascript
+array.reduce(callback(accumulator, currentValue), initialValue);
+```
+- `callback`: A function executed on each element, taking `accumulator` and `currentValue` as arguments.
+- `initialValue` (optional): The starting value of the accumulator.
+
+### Example:
+#### Summing Numbers in an Array
+```javascript
+const numbers = [1, 2, 3, 4, 5];
+const sum = numbers.reduce((acc, num) => acc + num, 0);
+
+console.log(sum); // Output: 15
+```
+
+#### Flattening an Array
+```javascript
+const nestedArray = [[1, 2], [3, 4], [5, 6]];
+const flatArray = nestedArray.reduce((acc, val) => acc.concat(val), []);
+
+console.log(flatArray); // Output: [1, 2, 3, 4, 5, 6]
+```
+
+#### Counting Occurrences
+```javascript
+const words = ["apple", "banana", "apple", "orange", "banana", "apple"];
+const wordCount = words.reduce((acc, word) => {
+  acc[word] = (acc[word] || 0) + 1;
+  return acc;
+}, {});
+
+console.log(wordCount); 
+// Output: { apple: 3, banana: 2, orange: 1 }
+```
+
+### When to Use `reduce()`?
+- Summing or accumulating values.
+- Transforming data (e.g., flattening arrays, counting occurrences).
+- Implementing custom aggregation logic.
+
